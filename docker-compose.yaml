@@ -5,6 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: laravel_app
     working_dir: /project_dir/backend
+    command: sh -c "chmod -R 777 storage bootstrap/cache && php-fpm"
     volumes:
       - ./backend:/project_dir/backend
     depends_on:
